@@ -1,0 +1,94 @@
+
+Example text for experimenting with regular expressions.
+Most of the text is just nonsense.
+
+We start with a piece of program copied from the introduction to debugging:
+
+def sum_to(n):
+    total = 0
+    for i in range(n+1):
+        new_total = total + i
+        total = new_total
+    return total
+
+def sum_of_sums(n):
+    total = 0
+    for i in range(n+1):
+        new_total = total + sum_to(i)
+        total = new_total
+    return total
+
+--------------------------------------------------------
+
+Texts for single character patterns and sequences:
+
+If we want to specify one of the special characters ("()[].*+?|^${\")
+as a pattern, we have to put a backslash ("\") in front of it --
+like we had to do for quotes in a string literal.
+Other non-letters-or-digits: , : ; ! ' " ` - / < = > ~ @ # % &
+
+Note that Sum, sum, sUm, SUM, etc. are all distinct names for Python.
+
+--------------------------------------------------------
+
+Texts for wildcards:
+
+abacadabra contains characters a as well as b ....
+what matches a.a?
+
+--------------------------------------------------------
+
+Texts for character sets and character ranges:
+
+Any of ...
+62740200 83518400 5917777
+specifies a weird round number... many ways exist
+
+--------------------------------------------------------
+
+Texts for repetition:
+
+Any of ...
+62740200 83518400 5917777
+specifies a weird round number... many ways exist
+
+searching a regular expression
+just searching
+
+--------------------------------------------------------
+
+Texts for parentheses and alternatives:
+
+oxxxoxxxxoxoxoxoxxoxxxoxooo
+For example, the pattern "def|for|return" matches any of these three words,
+xooxxxxxoxooxxoooxxxxoooooo
+and the pattern "[a-z]+|[A-Z]+" matches a sequence of letters
+all in lower case or all in upper case, but not mixed case.
+ooooxoxxoxooxooxxoooxoxooox
+ALL IN LOWER CASE OR ALL IN UPPER CASE, BUT NOT MIXED CASE.
+AlL In lOwEr cAsE Or aLl iN UpPeR CaSe, BuT NoT MiXeD CaSe.
+
+--------------------------------------------------------
+
+Texts for substituting groups:
+
+text = 'ab[cd:ef]gh'
+Let's do that again:
+    text = 'ab{cd:ef}gh'
+and again:
+        text = 'ab{cd:ef}gh'
+one more time...
+            text = 'ab{cd:ef}gh'
+
+text = 'Some stup1d text example; test 123'
+
+Just to make sure we have enough identical examples:
+inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur
+inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur
+inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur
+inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur
+inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur
+inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur inf22306wur
+
+data = 'inf22306wur tutorial1a assignments3b'
+wrong = '[abc}x:y{def]' # or right??
