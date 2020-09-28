@@ -16,7 +16,6 @@ def convertion (sign, degrees, minutes):
     convertion = (degrees + m) * r_d * sign
     return convertion
 
-print (convertion("W",90,0))
 
 
 def haversine (lat1, lat2, lon1, lon2):

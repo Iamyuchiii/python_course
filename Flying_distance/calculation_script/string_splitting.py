@@ -11,5 +11,3 @@ def str_split(textual):
     middle = textual[first_space + 1:last_space]
     last = textual[last_space + 1:]
     return first, middle, last
-
-print (str_split("52 22 N"))
