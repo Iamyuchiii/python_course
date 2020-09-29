@@ -20,7 +20,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RunManager">
@@ -58,6 +58,7 @@
       <workItem from="1601327783423" duration="619000" />
       <workItem from="1601328829886" duration="267000" />
       <workItem from="1601329116134" duration="69000" />
+      <workItem from="1601382671841" duration="634000" />
     </task>
     <servers />
   </component>

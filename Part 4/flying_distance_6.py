@@ -1,5 +1,6 @@
 from distance_cal import distance
 
+
 dic = {
     'Amsterdam' : ('Amsterdam', (52, 22, 'N'), (4, 32, 'E')),
     'Montreal'  : ('Montreal', (45, 30, 'N'), (73, 35, 'W')),
@@ -54,32 +55,38 @@ def distance_cal (lat1,lon1,lat2,lon2):
     return dis
 # print (distance_cal((52, 22, 'N'), (4, 32, 'E'), (45, 30, 'N'), (73, 35, 'W')))
 
-header = [""]
-header_format = '%10s%10s%10s%10s\n'
-maxtrix_format = "%s%10.3f%10.3f%10.3f\n"
 
-for head in sorted(dic):
-    header.append(head)
+def flying_table (filename, dict):
+    with open (filename, "w") as f:
 
-for head in sorted(dic):
-    name1, lat1, lon1 = dic[head]
-    # lat1 = " ".join([str(i) for i in lat1])
-    # lon1 = " ".join([str(i) for i in lon1])
-    distance = [head]
+        header = [""]
+        header_format = '%10s%10s%10s%10s'
+        maxtrix_format = "%s%10.3f%10.3f%10.3f"
 
-    for head2 in sorted(dic):
-        name2, lat2, lon2 = dic[head2]
-        # lat2 = " ".join([str(i) for i in lat2])
-        # lon2 = " ".join([str(i) for i in lon2])
-        matrix = distance_cal(lat1,lon1,lat2,lon2)
+        for head in sorted(dict):
+            header.append(head)
+
+        print (header_format % tuple(header), file=f)
 
 
+        for head in sorted(dict):
+            name1, lat1, lon1 = dict[head]
+            # lat1 = " ".join([str(i) for i in lat1])
+            # lon1 = " ".join([str(i) for i in lon1])
+            matrix_row = [head]
+            for head2 in sorted(dict):
+                name2, lat2, lon2 = dict[head2]
+                # lat2 = " ".join([str(i) for i in lat2])
+                # lon2 = " ".join([str(i) for i in lon2])
+                matrix = distance_cal(lat1, lon1, lat2, lon2)
+                matrix_row.append(matrix)
+            print (maxtrix_format%tuple(matrix_row), file=f)
+
+flying_table("flying6.txt", dic)
 
 
-# def flying_table (filename, dict):
-# #     print (dic)
-# #
-# # flying_table("s",dic)
+
+
 
 
 

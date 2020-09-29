@@ -23,4 +23,4 @@ def write_data_c (filename, dict):
 
             value = (name, lat_deg, deg_sign, lat_min, lat_dir, lon_deg, deg_sign, lon_min, lon_dir)
             f.write(format_print % value)
-write_data_c("flying5_C.txt", data)
+write_data_c("flying5.txt", data)
