@@ -5,7 +5,7 @@
  * The pipeline is designed for paired-end reads
  */
 
-params.reads = "$baseDir/bin/input_data/*R{1,2}.fasls
+params.reads = "$baseDir/bin/input_data/*R{1,2}.fastq
 tq.gz"
 //params.bowtie2_index = "$baseDir/bin/databases/bowtie2_human_index/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index"
 //params.bowtie2_index_full_ana = "$baseDir/bin/databases/bowtie2_human_index_full_ana/GCA_000001405.15_GRCh38_full_analysis_set.fna.bowtie_index"

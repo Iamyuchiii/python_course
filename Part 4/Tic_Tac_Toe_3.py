@@ -1,8 +1,8 @@
 from tic_tac_to_class import winner
 
 list_tic = [[' ','o',' '],
-            [' ','o','x'],
-            ['x',' ',' ']]
+            [' ','x',' '],
+            ['o','x',' ']]
 
 def play(player, board):
     import random
@@ -38,6 +38,5 @@ def play(player, board):
         i, j = random.choice(random_pos)
         board[i][j] = player
     return board
-
 
 print (play("x", list_tic))
