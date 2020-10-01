@@ -2,7 +2,6 @@ class Triangles:
     """
     class for calculating the circumference and the area of the triangles
     """
-    name = "tom"
     def __init__ (self, b, c):
         # self.c_x = c[0] also works for unpacking
         self.b_x, self.b_y = b
@@ -20,11 +19,11 @@ class Triangles:
         a = abs(xb*yc - xc*yb)/2
         return a
 
-# my_triangle = Triangles((3,0), (0,4))
-# print(my_triangle.circumference())
+my_triangle = Triangles((3,0), (0,4))
+print(my_triangle.circumference())
 # print(my_triangle.area())
-r1 = Triangles()
-r1.name = "Tom"
+# r1 = Triangles()
+# r1.name = "Tom"
 
 
 
