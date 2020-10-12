@@ -59,6 +59,7 @@ def calender2 (month, year):
         leap_year = True
     else:
         leap_year = False
+
     # Identifying the starting day
     # This is the correct way
     # century = (year - 1)//100 +1
@@ -77,7 +78,7 @@ def calender2 (month, year):
     s_day3 = s_day2 + month_code + year_code
     s_day4 = s_day3%7
 
-    if leap:
+    if leap_year:
         day = leap[month]
         print("\t" * (s_day4 - 1), end="\t")
         for i in range(1, day+1):
@@ -94,4 +95,4 @@ def calender2 (month, year):
             else:
                 print (i)
 
-calender2("october", 2021)
+calender2("october", 2020)
