@@ -8,7 +8,6 @@ def remove_substring(substring,string):
     return n_str, substring
 print (remove_substring(substring,string))
 
-def remove_substring()
 
 # text = "banana"
 # sub = "an"
