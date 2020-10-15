@@ -1,3 +1,4 @@
+import math
 """
 Inverting a string
 """
@@ -146,31 +147,46 @@ Inverting a string
 # print(matcher.sub(r'\1...\3',data))
 # #output# inf...wur tutorial...a assignments...b
 
-class Time:
-    """Represents the time of day.
-    attributes: hour, minute, second
-    """
-time = Time()
-time.hour = 11
-time.minute = 59
-time.second = 30
+# class Time:
+#     """Represents the time of day.
+#     attributes: hour, minute, second
+#     """
+# time = Time()
+# time.hour = 11
+# time.minute = 59
+# time.second = 30
+#
+# start = Time()
+# start.hour = 9
+# start.minute = 45
+# start.second = 0
+#
+# duration = Time()
+# duration.hour = 1
+# duration.minute = 35
+# duration.second = 0
+#
+#
+# def add_time(t1,t2):
+#     sum = Time()
+#     sum.hour = t1.hour + t2.hour
+#     sum.minute = t1.minute + t2.minute
+#     sum.second = t1.second + t2.second
+#     print (sum)
+#
+# add_time(start,duration)
 
-start = Time()
-start.hour = 9
-start.minute = 45
-start.second = 0
+l = [(4,10),(10,4),(10,16)]
 
-duration = Time()
-duration.hour = 1
-duration.minute = 35
-duration.second = 0
-
-
-def add_time(t1,t2):
-    sum = Time()
-    sum.hour = t1.hour + t2.hour
-    sum.minute = t1.minute + t2.minute
-    sum.second = t1.second + t2.second
-    print (sum)
-
-add_time(start,duration)
+def on_circle(coords, center, dist):
+    circle = True
+    i = 0
+    while circle and i < len(coords):
+        x, y = coords[i]
+        i_dis = math.sqrt((center[0]-x)**2+(center[1]-y)**2)
+        if i_dis != dist:
+            circle = False
+        i += 1
+    return circle
+print (on_circle([(4,10),(10,4),(10,16)],(10,10), 6))
+print (on_circle([(4,10),(10,4),(16,16)],(10,10), 6))
