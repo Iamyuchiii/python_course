@@ -59,13 +59,12 @@ def distance_cal (lat1,lon1,lat2,lon2):
 def flying_table (filename, dict):
     with open (filename, "w") as f:
 
-        header = [""]
-        header_format = '%10s%10s%10s%10s'
+        header = []
+        header_format = '%20s%10s%10s'
         maxtrix_format = "%s%10.3f%10.3f%10.3f"
 
         for head in sorted(dict):
             header.append(head)
-
         print (header_format % tuple(header), file=f)
 
 

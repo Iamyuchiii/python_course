@@ -7,7 +7,7 @@ min_data = min(data)
 max_data = max(data)
 total_value = max_data - min_data + 1
 my_bin = np.linspace(min_data, max_data, total_value) # min value, max value, total value wanted
-my_bin2 = np.arange(min_data,max_data+1, 1) # min value, max value, steps from min to max
+my_bin2 = np.arange(min_data, max_data+1, 1) # min value, max value, steps from min to max
 
 plt.xlabel('numbers')
 plt.ylabel('something')

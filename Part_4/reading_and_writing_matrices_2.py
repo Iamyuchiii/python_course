@@ -25,6 +25,8 @@ def reading_file(filename):
                 clean.append(temp)
         # sorting the clean and return the matrix
         for l in clean:
+            print (l)
+            print (l[0])
             split_value = l[0].split(",")
             temp = []
             for e in split_value:
