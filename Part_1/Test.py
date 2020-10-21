@@ -189,9 +189,4 @@ def on_circle(coords, center, dist):
         i += 1
     return circle
 print (on_circle([(4,10),(10,4),(10,16)],(10,10), 6))
-print (on_circle([(4,10),(10,4),(16,16)],(10,10), 6))
-
-a = 2
-b = "s"
-
-print ("hallo {} is {}".format(b,a))
+# print (on_circle([(4,10),(10,4),(16,16)],(10,10), 6))
