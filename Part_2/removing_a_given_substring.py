@@ -1,12 +1,12 @@
-string = "banana"
-substring = "an"
-def remove_substring(substring,string):
-    n_str = ""
-    for s in range(len(string)):
-        if string[s:s+len(substring)] == substring:
-            n_str = string[0:s] + string[s+len(substring):]
-    return n_str, substring
-print (remove_substring(substring,string))
+# string = "banana"
+# substring = "an"
+# def remove_substring(substring,string):
+#     n_str = ""
+#     for s in range(len(string)):
+#         if string[s:s+len(substring)] == substring:
+#             n_str = string[0:s] + string[s+len(substring):]
+#     return n_str, substring
+# print (remove_substring(substring,string))
 
 
 # text = "banana"
@@ -26,3 +26,17 @@ print (remove_substring(substring,string))
 #     return new_text
 #
 # print (count_substring(sub,text))
+
+
+for(i in 1:130) {
+    for(j in 1:30) {
+        result <- latitude3[i,] - latitude3[j,]
+        print(result)
+    }
+}
+for(i in 1:130) {
+  for(j in 1:130) {
+    result <- latitude3[i,] - latitude3[j,]
+    list[[i,j]] <- longdiff, latdiff
+  }
+}

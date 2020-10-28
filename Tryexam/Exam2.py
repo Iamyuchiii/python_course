@@ -4,14 +4,14 @@ quaestion 2a + b
 def high_low (number):
     if number > 1:
         lowest = 1
-        highets = number
+        highest = number
     elif 0 <= number <= 1:
         lowest = number
-        highets = 1
+        highest = 1
     else:
         raise ValueError("the number is 0 or below 0")
 
-    return  lowest, highets
+    return lowest, highest
 
 def sqaure_est(number, requirement):
     low, high = high_low(number)

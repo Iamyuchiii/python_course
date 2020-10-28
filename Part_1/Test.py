@@ -190,3 +190,60 @@ def on_circle(coords, center, dist):
     return circle
 print (on_circle([(4,10),(10,4),(10,16)],(10,10), 6))
 # print (on_circle([(4,10),(10,4),(16,16)],(10,10), 6))
+
+def check_capital(string_value):
+    capital = False
+    for i in range(65,91):
+        if chr(i) in string_value:
+            capital = True
+    return capital
+
+def keep_capitals(iterable_data):
+    result = []
+    for item in iterable_data:
+        if check_capital(item):
+            result.append(item)
+    return result
+
+
+def check(matrix, value):
+    p_list = []
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if matrix[i][j] == value:
+                p_list += [(i,j)]
+    return p_list
+A=[[1, 0, -1], [1,3,1]]
+check1 = 1
+
+scores = {'ID1': (3, 3, 4, 5),
+          'ID2': (2, 5, 4, 5),
+          'ID3': (3, 3, 4, 3),
+          }
+def evaluation_score(score_dic):
+    for key, value in score_dic.items():
+        total_average = 0
+        for score in value:
+            total_p_s = 0
+            total_p_s += score
+            print (total_p_s)
+            average_p_s = total_p_s / 4
+            total_average += average_p_s
+        return total_average
+
+def calculate_final_grade (score, weight):
+    total = 0
+    for s, w in zip(score,weight):
+        score = s*w
+        total += score
+    final_score = total / 100
+    h = final_score - int(final_score)
+    if 0.3 <= h < 0.8:
+        final_score2 = int(final_score) + 0.5
+    elif h >= 0.8:
+        final_score2 = int(final_score) + 1
+    else:
+        final_score2 = int(final_score)
+    return final_score2
+print (calculate_final_grade((8, 8, 7, 6), (10, 20, 30, 40)))
+
