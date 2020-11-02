@@ -15,28 +15,40 @@ def convert_fasta_to_dic (filename):
     :return: a dictionary
     """
     with open(filename, "r") as f:
-        header = []
-        samples = []
-        sample = ""
-        for line in f:
-            # adds the header to the header list
-            if line.startswith(">"):
-                headerline = line.strip()
-                header.append(headerline[1:])
-                samples.append(sample)
-                sample = ""
-            # adds the sequence to the samples list
-            else:
-                sample += line.strip()
-        samples.append(sample)
+        # read the whole file and splits the content with ">"
+        file_content = f.read()
+        entries = file_content.split(">")[1:]
+        # create a empty dictionary
+        sequences_dict = {}
+        for ent in entries:
+            # selected the label (header) and seqeuence. x is the \n
+            label, x, sequence = ent.partition("\n")
+            # replace the rest of the \n in the sequence
+            sequences_dict[label] = sequence.replace("\n", "")
+        return sequences_dict
 
-        # make a empty dictionary
-        DNA_dict = {}
-        # loop through 2 list header and samples and add them as key and value pairs in dic
-        for h, s in zip(header,samples[1:]):
-            DNA_dict[h] = s
-
-        return DNA_dict
+        # header = []
+        # samples = []
+        # sample = ""
+        # for line in f:
+        #     # adds the header to the header list
+        #     if line.startswith(">"):
+        #         headerline = line.strip()
+        #         header.append(headerline[1:])
+        #         samples.append(sample)
+        #         sample = ""
+        #     # adds the sequence to the samples list
+        #     else:
+        #         sample += line.strip()
+        # samples.append(sample)
+        #
+        # # make a empty dictionary
+        # DNA_dict = {}
+        # # loop through 2 list header and samples and add them as key and value pairs in dic
+        # for h, s in zip(header,samples[1:]):
+        #     DNA_dict[h] = s
+        #
+        # return DNA_dict
 
 def GC_content(DNA):
     """
@@ -44,6 +56,8 @@ def GC_content(DNA):
     :param DNA: string of DNA
     :return: the GC content
     """
+    # uppercase all DNA string
+    DNA = DNA.upper()
     # counts the G and C in the the DNA string
     G = DNA.count("G")
     C = DNA.count("C")
