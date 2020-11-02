@@ -2,7 +2,7 @@
 
 """
 Author: Yuchen Huang
-Script to solve problem 5
+Script to solve problem 2
 """
 
 # import statements
