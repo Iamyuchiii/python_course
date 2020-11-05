@@ -2,7 +2,7 @@
 
 """
 Author: Yuchen Huang
-Script to solve problem 4
+Script to solve problem 6
 """
 
 # import statements
@@ -58,6 +58,3 @@ if __name__ == "__main__":
     print (result)
     # writing the result to a writefilepath
     write_results(writefilepath, result)
-
-
-

@@ -2,7 +2,7 @@
 
 """
 Author: Yuchen Huang
-Script to solve problem 4
+Script to solve problem 7
 """
 
 # import statements
@@ -16,12 +16,13 @@ def parse_input(filename):
     """
     with open(filename, "r") as f:
         # read the whole file and covert the RNA into a list
-        RNA_string = f.read()
-        return RNA_string
+        RNA_string = f.read().split("\n")
+        RNA_string.remove("")
+        return "".join(RNA_string)
 
 # DNA codon table for translation
 codon_table ={
-"UUU":"F", "UUC":"F", "UUA":"L", "UUG":"L",
+    "UUU":"F", "UUC":"F", "UUA":"L", "UUG":"L",
     "UCU":"S", "UCC":"S", "UCA":"S", "UCG":"S",
     "UAU":"Y", "UAC":"Y", "UAA":"STOP", "UAG":"STOP",
     "UGU":"C", "UGC":"C", "UGA":"STOP", "UGG":"W",
@@ -40,12 +41,22 @@ codon_table ={
 }
 
 def translation(RNA):
-    protein = []
+    """
+    Takes a RNA string and translate the codon into proteins
+    :param RNA:
+    :return:
+    """
+    # make sure that everything is in uppercased
+    RNA = RNA.upper()
+    protein = ""
+    # loop though the 3 positions in RNA to generated a codon
     for position_codon in range(0, len(RNA), 3):
+        # string slicing to get the 3 pairs strings
         codon = codon_table[RNA[position_codon:position_codon+3]]
+        # if the codon value is not STOP then the function keeps appending the AA to the list protein
         if codon != "STOP":
-            protein.append(codon)
-    return "".join(protein)
+            protein += codon
+    return protein
 
 def write_results(filename, result):
     """
@@ -72,10 +83,3 @@ if __name__ == "__main__":
     Test area
     """
     # print(translation("AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA"))
-
-
-
-
-
-
-
