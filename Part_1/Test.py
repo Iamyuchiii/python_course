@@ -246,8 +246,3 @@ Inverting a string
 #         final_score2 = int(final_score)
 #     return final_score2
 # print (calculate_final_grade((8, 8, 7, 6), (10, 20, 30, 40)))
-
-list = [[12,13],[18,15]]
-
-item = [[j for j in i]for i in list]
-print(item)
