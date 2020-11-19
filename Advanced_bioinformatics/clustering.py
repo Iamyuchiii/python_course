@@ -26,17 +26,18 @@ def pandaframe_transform(dictionary, headers):
 
 def hierarchical_clustering(dataframe, headers):
     header_list = list(dataframe)
-    dataframe = dataframe.transpose()
     # pairwise distance
     distances = sch.distance.pdist(dataframe, metric="euclidean")
     clustering = sch.linkage(distances, method="complete")
     tree = sch.dendrogram(clustering, color_threshold=25, labels=dataframe.index.values)
+    plt.show()
 
+    # dataframe = dataframe.transpose()
     # nieuw tree
     distances_2 = sch.distance.pdist(dataframe, metric="correlation")
     clustering_2 = sch.linkage(distances_2, method="complete")
     tree_2 = sch.dendrogram(clustering_2, leaf_font_size=2, color_threshold=4, labels=header_list)
-
+    plt.show()
 
 def heatmap_clustering(dataframe):
     dataframe = dataframe.transpose()
