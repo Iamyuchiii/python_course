@@ -5,3 +5,4 @@ def area_rectangle (x_lo, x_hi, y_lo, y_hi):
 	return area
 
 print (1,2,3,4)
+

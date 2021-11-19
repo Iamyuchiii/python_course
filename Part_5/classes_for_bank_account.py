@@ -1,4 +1,4 @@
-class Bank:
+class Account:
     def __init__(self, name, acc_nr):
         self.balance = 0.0
         self.owner = name
@@ -32,9 +32,9 @@ class Bank:
             borrow = self.balance * self.borrow_rate
             self.balance -= borrow
 
-class CreditAccount(Bank):
+class CreditAccount(Account):
     def __init__(self, name, acc_nr, limit):
-        Bank.__init__(self, name, acc_nr)
+        Account.__init__(self, name, acc_nr)
         self.overdraft_limit = limit
         self.borrow_rate = self.borrow_rate
         self.withdraw_charge = 0.01
@@ -51,7 +51,7 @@ class CreditAccount(Bank):
     def change_borrow_rate(self, new_rate):
         self.borrow_rate = new_rate
 
-acc_1 = Bank("me", "1234")
+acc_1 = Account("me", "1234")
 acc_2 = CreditAccount("you", "5678", 2000)
 acc_1.deposit(200)
 print(acc_1.check_balance())
